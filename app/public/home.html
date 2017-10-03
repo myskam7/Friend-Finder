@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+    
+
+    <div class="container">
+            
+                <div class="jumbotron">
+                  <h1 class="text-center"><span></span>South Park Survey</h1>
+                  <hr>
+                 
+                  <br>
+            
+                  <div class="text-center">
+                    
+                    <a href="/reserve"><button type="button" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-credit-card"></span></button></a>
+                  </div>
+            
+                </div>
+
+
+    <script>
+    
+    $(".submit").on("click", function(event) {
+      event.preventDefault();
+
+    
+      var survey = {
+        Name: $("#reserve-name").val().trim(),
+        Number: $("#reserve-phone").val().trim(),
+       
+      };
+      console.log(survey);
+      
+      $.post("/api/tables", userData)
+      .done(function(data){
+          console.log(data)
+      });
+      alert("tat")
+    });
+
+    </script>
+    
+</body>
+</html>
