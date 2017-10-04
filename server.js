@@ -16,7 +16,7 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var PORT = 8080;
+var PORT = process.env.PORT ||8080;
 
 htmlRouter(app, __dirname, friends, path)
 
